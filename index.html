@@ -29,9 +29,9 @@
         </ons-toolbar>
 
         <ons-tabbar swipeable position="auto">
-            <ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
+            <ons-tab page="tab1.html" label="Home" icon="ion-home, material:md-home" badge="7" active>
             </ons-tab>
-            <ons-tab page="tab2.html" label="Tab 2" icon="md-shopping-cart" active-icon="md-shopping-cart">
+            <ons-tab page="tab2.html" label="Cart" icon="md-shopping-cart" active-icon="md-shopping-cart">
             </ons-tab>
         </ons-tabbar>
 
@@ -63,7 +63,7 @@
             </ons-carousel>
             <!--/////////////////////////////////////////////////////////////////////////////-->
             <div>
-            
+
                 <ons-row class="category" style="text-align:center">
                     <ons-col modifier="nodivider" id="Category_1" onclick="openPlaylist(this.id)">
                         <div class="category_wrapper">
@@ -82,15 +82,15 @@
                         </div>
                     </ons-col>
                     <ons-col modifier="nodivider" id="Category_2" onclick="openPlaylist(this.id)">
-                            <div class="category_wrapper">
-                                <figure class="category_thumbnail">
-                                    <ons-icon icon="fa-headphones"></ons-icon>
-                                    <div class="category_title" id="Category_2_name">Relax</div>
-                                </figure>
-                            </div>
-                        </ons-col>
+                        <div class="category_wrapper">
+                            <figure class="category_thumbnail">
+                                <ons-icon icon="fa-headphones"></ons-icon>
+                                <div class="category_title" id="Category_2_name">Relax</div>
+                            </figure>
+                        </div>
+                    </ons-col>
                 </ons-row>
-                <ons-row class="category"style="text-align:center">
+                <ons-row class="category" style="text-align:center">
                     <ons-col modifier="nodivider" id="Category_3" onclick="openPlaylist(this.id)">
                         <div class="category_wrapper">
                             <figure class="category_thumbnail">
@@ -108,13 +108,13 @@
                         </div>
                     </ons-col>
                     <ons-col modifier="nodivider" id="Category_2" onclick="openPlaylist(this.id)">
-                            <div class="category_wrapper">
-                                <figure class="category_thumbnail">
-                                    <ons-icon icon="fa-headphones"></ons-icon>
-                                    <div class="category_title" id="Category_2_name">Reload</div>
-                                </figure>
-                            </div>
-                        </ons-col>
+                        <div class="category_wrapper">
+                            <figure class="category_thumbnail">
+                                <ons-icon icon="fa-headphones"></ons-icon>
+                                <div class="category_title" id="Category_2_name">Reload</div>
+                            </figure>
+                        </div>
+                    </ons-col>
                 </ons-row>
                 <ons-row class="category" style="text-align:center">
                     <ons-col modifier="nodivider" id="Category_5" onclick="openPlaylist(this.id)">
@@ -134,13 +134,13 @@
                         </div>
                     </ons-col>
                     <ons-col modifier="nodivider" id="Category_2" onclick="openPlaylist(this.id)">
-                            <div class="category_wrapper">
-                                <figure class="category_thumbnail">
-                                    <ons-icon icon="fa-headphones"></ons-icon>
-                                    <div class="category_title" id="Category_2_name">Rerun</div>
-                                </figure>
-                            </div>
-                        </ons-col>
+                        <div class="category_wrapper">
+                            <figure class="category_thumbnail">
+                                <ons-icon icon="fa-headphones"></ons-icon>
+                                <div class="category_title" id="Category_2_name">Rerun</div>
+                            </figure>
+                        </div>
+                    </ons-col>
                 </ons-row>
 
             </div>
@@ -228,9 +228,50 @@
 
     <template id="tab2.html">
         <ons-page id="Tab2">
-            <p style="text-align: center;">
-                This is the second page.
-            </p>
+            <ons-list-header>SHOPPING CART</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                    <span class="list-item__title">app</span>
+                    <span class="list-item__subtitle"style="color: blue;">$500</span>
+                </div>
+                <div class="right">
+                      
+                            <ons-icon icon="md-delete"></ons-icon>
+                      
+                    </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                    <span class="list-item__title">Cutest kitty</span>
+                    <span class="list-item__subtitle"style="color: blue;">$300</span>
+                </div>
+                <div class="right">
+                 
+                            <ons-icon icon="md-delete"></ons-icon>
+                     
+                    </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                    <span class="list-item__title">Robin</span>
+                    <span class="list-item__subtitle"style="color: blue;">$900</span>
+                    
+                </div>
+                <div class="right">
+                  
+                            <ons-icon icon="md-delete"></ons-icon>
+                  
+                    </div>
+            </ons-list-item>
         </ons-page>
     </template>
 
