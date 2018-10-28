@@ -327,7 +327,7 @@
   });</script>
 <script>
   getHomeData()
-
+  tatol();
 
   document.addEventListener('prechange', function (event) {
     if (event.index == 0) {
@@ -546,41 +546,49 @@
     localStorage.clear();
   }
 
- const data = []
+  
   function search(search) {
-    
+
+   
+   const filterItems = (needle, heystack) => {
+    let query = needle.toLowerCase();
+    return heystack.filter(item => item.toLowerCase().indexOf(needle) >= 0);
+  }
+  console.log("55+" + filterItems(search, data));
+  
+  }
+  const data = []
+  function tatol() {
     console.log(search);
     db.collection("PRODUCTS").get()
       .then(function (querySnapshot) {
-        
+
 
         querySnapshot.docs.forEach(function (item) {
-          data.push(item.data().title
+          data.push(item.data().title)
 
 
-
-
-
-
-          )
-
-
-console.log(data)
+          console.log(data)
 
 
         });
 
-console.log("55+"+filterItems(search, data));
+        
       })
-      // const fruits = data[1];
-
-      
+    // const fruits = data[1];
 
 
-  }const filterItems = (needle, heystack) => {
-  let query = needle.toLowerCase();
-  return heystack.filter(item => item.toLowerCase().indexOf(needle) >= 0);
-}
+
+
+  }
+
+
+
+
+
+
+
+
 
 </script>
 
