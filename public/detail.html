@@ -60,29 +60,21 @@
 
   <template id="tab1.html">
     <ons-page>
-            <div id="products"></div>
-            <script id="products_template" type="text/template"> 
-       <ons-row>
-              
-      <ons-col width="33%" >
-        <ons-card >
-              <img class="" src="<%= product.data().picc %>" width="99%"height="70px"><br>
-      <%= product.data().Category %><br>
-      <%= product.data().title %><br>
-      ฿<%= product.data().price %>
-        </ons-card></ons-col>
-      
-
-       </ons-row>
-       
-      
-      </Script>
+            <div id="detail"></div>
+            <script id="detail_template" type="text/template">
+                <img class="" src="<%= detail.data().picc %>" width="99%"height="70px"><br>
+                <%= detail.data().Category %><br>
+                <%= detail.data().title %><br>
+                ฿<%= detail.data().price %>
+            
+            
+            </Script>
     </ons-page>
   </template>
 
   
 </body>
-
+</script>
 <script>
   
 
@@ -91,17 +83,17 @@
 detail(id);
 function detail(id){
     
-db.collection("PRODUCTS").where("pid","==", id).get()
+db.collection("PRODUCTS").where("pid","==",id).get()
               .then(function (querySnapshot) {
 
                 // doc.data() is never undefined for query doc snapshots
                 console.log(querySnapshot.docs);
                 console.log(id)
-                var products_template = $('#products_template').html();
-                console.log(products_template)
-                var html = ejs.render(products_template, { product: querySnapshot.docs });
+                var detail_template = $('#detail_template').html();
+                
+                var html = ejs.render(detail_template, { detail: querySnapshot.docs });
 
-                $('#products').html(html);
+                $('#detail').html(html);
 
 
 
