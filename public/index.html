@@ -36,7 +36,7 @@
   <title>Document</title>
 </head>
 
-<body><ons-navigator swipeable id="myNavigator" page="tab3.html">
+<body><ons-navigator swipeable id="myNavigator" page="tab1.html">
   <ons-page>
       
     <ons-toolbar>
@@ -71,7 +71,7 @@
   <template id="tab1.html">
     <ons-page>
       <p style="text-align: center; margin-top: 10px;">
-        <ons-search-input placeholder="Search" onchange="ons.notification.alert('Searched for: ' + this.value)"></ons-search-input>
+        <ons-search-input placeholder="Search" onchange="search(this.value)"></ons-search-input>
       </p>
       <ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel" style="height: 300px;">
         <ons-carousel-item id="carousel1" style="background: url(1.jpg)no-repeat center;background-size: contain;">
@@ -279,6 +279,10 @@
 
   <template id="tab4.html">
       <ons-page>
+          <ons-toolbar>
+              <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+              <div class="center"></div>
+            </ons-toolbar>
           <div id="detail"></div>
           <script id="detail_template" type="text/template"> 
      <ons-row>
@@ -515,7 +519,7 @@
 function showdetail() {
   var id = localStorage.getItem('id');
 
-db.collection("PRODUCTS").where("pid", "==", id).get()
+db.collection("PRODUCTS").where("pid", "==",id).get()
               .then(function (querySnapshot) {
 
                 // doc.data() is never undefined for query doc snapshots
@@ -537,7 +541,13 @@ db.collection("PRODUCTS").where("pid", "==", id).get()
 
 localStorage.clear();
 }
+function search(search){
+console.log(search);
 
+
+
+
+}
 </script>
 
 </html>
