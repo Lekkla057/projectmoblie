@@ -250,7 +250,7 @@
 
   <template id="tab3.html">
     <ons-page>
-        <div id="noproduct"></div>
+        
       <div id="product"></div>
       <script id="product_template" type="text/template"> 
  <ons-row>
@@ -258,7 +258,7 @@
           var products = product.data();
           %>
 <ons-col width="33%" >
-  <ons-card>
+  <ons-card onclick="detail('<%- products.pid %>')">
         <img class="" src="<%= products.picc %>" width="99%"height="70px"><br>
 <%= products.Category %><br>
 <%= products.title %><br>
@@ -487,6 +487,15 @@
     // var name1 = localStorage.getItem('name');
     //  getproductData(name1)
   }
+
+  function detail(pid) {
+    localStorage.setItem('id', pid);
+window.location.assign("/detail.html")
+
+// var name1 = localStorage.getItem('name');
+//  getproductData(name1)
+}
+
 
 </script>
 

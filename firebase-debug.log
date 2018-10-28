@@ -1,0 +1,28 @@
+[debug] [2018-10-28T08:11:50.011Z] ----------------------------------------------------------------------
+[debug] [2018-10-28T08:11:50.016Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\STD\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-28T08:11:50.016Z] CLI Version:   4.2.1
+[debug] [2018-10-28T08:11:50.017Z] Platform:      win32
+[debug] [2018-10-28T08:11:50.017Z] Node Version:  v8.11.3
+[debug] [2018-10-28T08:11:50.017Z] Time:          Sun Oct 28 2018 15:11:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-10-28T08:11:50.018Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-28T08:11:50.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-28T08:11:50.136Z] > authorizing via signed-in user
+[debug] [2018-10-28T08:11:50.140Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-28T08:11:50.141Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-28T08:11:50.702Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-28T08:11:50.883Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/shopee-8710c  
+ 
+[debug] [2018-10-28T08:11:52.086Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-28T08:11:52.087Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/shopee-8710c  
+ 
+[debug] [2018-10-28T08:11:53.491Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\977-341\Quiz1'...
+[info] 
+[debug] [2018-10-28T08:11:53.508Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/708925055871/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-28T08:11:54.179Z] <<< HTTP RESPONSE 200
+[info] i  hosting[shopee-8710c]: Serving hosting files from: public
+[info] +  hosting[shopee-8710c]: Local server: http://localhost:5000
