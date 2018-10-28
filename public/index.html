@@ -62,7 +62,8 @@
         </ons-tab>
         <ons-tab page="tab3.html" label="product" icon="md-shopping-cart" active-icon="md-shopping-cart">
         </ons-tab>
-
+        <ons-tab page="tab5.html" label="product" icon="md-shopping-cart" active-icon="md-shopping-cart">
+          </ons-tab>
       </ons-tabbar>
 
     </ons-page>
@@ -308,6 +309,38 @@
     </Script>
     </ons-page>
   </template>
+
+
+
+  <template id="tab5.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-back-button>Page 1</ons-back-button>
+          </div>
+          <div class="center"></div>
+        </ons-toolbar>
+        <div id="test"></div>
+        <script id="test_template" type="text/template"> 
+       <ons-row>
+          <% test.forEach(function(test){
+            var tests = test.data();
+            %>
+      <ons-col width="100" >
+        <ons-card >
+              <img class="" src="<%= tests.picc %>" width="99%"height="200px"><br>
+      <%= tests.Category %><br>
+      <%= tests.title %><br>
+      ฿<%= tests.price %>
+        </ons-card></ons-col>
+      
+        <%});%> 
+       </ons-row>
+       
+      
+      </Script>
+      </ons-page>
+    </template>
 </body>
 <script>
   var prev = function () {
@@ -346,8 +379,12 @@
         getproductData()
       }
       else { getproductData(name) }
-      localStorage.clear();
-    }
+      
+    }else if (event.index == 3) {
+      var title = localStorage.getItem('title');
+      console.log('Cart click');
+      // test(title)
+    }localStorage.clear();
   });
 
   function getHomeData() {
@@ -555,9 +592,19 @@
     return heystack.filter(item => item.toLowerCase().indexOf(needle) >= 0);
   }
   console.log("55+" + filterItems(search, data));
-  
+  var item=filterItems(search, data);
+  console.log("xxx",item)
+test(item);
+document.getElementById('tabbar').setActiveTab(3);
+    // localStorage.setItem('title', item);
+
   }
+
   const data = []
+
+
+
+
   function tatol() {
     console.log(search);
     db.collection("PRODUCTS").get()
@@ -581,7 +628,55 @@
 
 
   }
+function test(title){
+console.log("888",title);
 
+// for(var i =0;i<tests.length;i++){
+  title.forEach(function(title) {
+    console.log('tset',title);
+
+db.collection("PRODUCTS").where("title", "==",title).get()
+      .then(function (querySnapshot) {
+
+        // doc.data() is never undefined for query doc snapshots
+        console.log(querySnapshot.docs);
+        var test_template = $('#test_template').html();
+
+        var html = ejs.render(test_template, { test: querySnapshot.docs });
+
+        $('#test').html(html);
+
+
+
+
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+
+
+  });
+// console.log(tests)
+// db.collection("PRODUCTS").where("title", "==",tests).get()
+//       .then(function (querySnapshot) {
+
+//         // doc.data() is never undefined for query doc snapshots
+//         console.log(querySnapshot.docs);
+//         var test_template = $('#test_template').html();
+
+//         var html = ejs.render(test_template, { test: querySnapshot.docs });
+
+//         $('#test').html(html);
+
+
+
+
+//       })
+//       .catch(function (error) {
+//         console.log("Error getting documents: ", error);
+//       });
+// }}
+ }
 
 
 
